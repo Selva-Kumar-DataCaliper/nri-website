@@ -1,0 +1,44 @@
+services:
+  db:
+    image: 'mysql:latest'
+    container_name: 'nri-db'
+    volumes:
+      - './db_data:/var/lib/mysql'
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: nri
+      MYSQL_USER: nri-user
+      MYSQL_PASSWORD: nri
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 'nri-core'
+    restart: always
+    ports:
+      - '8000:80'
+    environment:
+      WORDPRESS_DB_HOST: 'db:3306'
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - '.:/var/www/html'
+    depends_on:
+      - db
+  phpmyadmin:
+    image: 'phpmyadmin:latest'
+    container_name: 'nri-phpmyadmin'
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    depends_on:
+      - db
+volumes:
+  db_data: null
