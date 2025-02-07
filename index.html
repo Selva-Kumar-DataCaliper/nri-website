@@ -249,36 +249,48 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
                         <div class="form-container">
-                            <form>
+                            <form method="POST" class="needs-validation" novalidate>
                                 <div class="form-row">
                                     <div class="form-group">
-
-                                        <input type="text" placeholder="First Name" id="first-name" name="first-name">
+                                        <input type="text" placeholder="First Name" id="first-name" name="first-name"
+                                            class="form-control" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your first name.
+                                        </div>
                                     </div>
                                     <div class="form-group">
-
-                                        <input type="text" placeholder="Last Name" id="last-name" name="last-name">
+                                        <input type="text" placeholder="Last Name" id="last-name" name="last-name"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-
-                                        <input type="email" placeholder="Email" id="email" name="email">
+                                        <input type="email" placeholder="Email" id="email" name="email"
+                                            class="form-control" required>
+                                        <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
                                     </div>
                                     <div class="form-group">
-
-                                        <input type="tel" placeholder="Mobile" id="mobile" name="mobile">
+                                        <input type="tel" placeholder="Mobile" id="mobile" name="mobile"
+                                            class="form-control" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your mobile number.
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-
-                                    <input type="text" placeholder="Services" id="services" name="services">
+                                    <input type="text" placeholder="Services" id="services" name="services"
+                                        class="form-control" required>
+                                    <div class="invalid-feedback">
+                                        Please specify the service you are interested in.
+                                    </div>
                                 </div>
                                 <div class="form-group">
-
-                                    <textarea id="message" placeholder="Message" name="message" rows="6"></textarea>
+                                    <textarea id="message" placeholder="Message" name="message" rows="6"
+                                        class="form-control"></textarea>
                                 </div>
-                                <button type="submit" class="submit-button">Submit</button>
+                                <button type="submit" class="submit-button btn btn-primary">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -348,15 +360,37 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-
 </body>
 <script src="javascript/bootstrap.js"></script>
 <script src="javascript/jquery-3.6.3.min.js"></script>
 <script src="javascript/custom.js"></script>
 <script src="javascript/anim.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('form').on('submit', function (event) {
+            event.preventDefault();
+            $(this).addClass('was-validated');
+            if (this.checkValidity()) {
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: 'enquire-now.php', // Replace with your server endpoint URL
+                    data: formData,
+                    success: function (response) {
+                        $('form').removeClass('was-validated');
+                        $('form')[0].reset();                        
+                        console.log(response);
+                        alert(response.message);
+                    },
+                    error: function (error) {
+                        alert('Error submitting form!');
+                    }
+                });
+            }
+        });
+    });
+</script>
 
 </html>

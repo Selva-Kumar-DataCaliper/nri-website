@@ -1,3 +1,5 @@
 wp-config.php
 error_log
 *.sql
+vendor/
+composer.lock

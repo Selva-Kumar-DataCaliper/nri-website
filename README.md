@@ -1,6 +1,6 @@
 ## Setting up the Project ##
 
-Project is based on Laravel 9, so requires
+Project is based on HTML and Core PHP, so requires
 
 - Php 8.4
 - Mysql latest
