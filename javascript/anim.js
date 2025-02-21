@@ -5,12 +5,12 @@
 const SimpleSlider = (function ($) {
 
   let slider = {},
-      $container,
-      $slides,
-      $prev,
-      $next,
-      $dots,
-      autoSlideInterval;
+    $container,
+    $slides,
+    $prev,
+    $next,
+    $dots,
+    autoSlideInterval;
 
   slider.config = {
     slideDuration: 20000,  // Time between slides
@@ -23,7 +23,7 @@ const SimpleSlider = (function ($) {
   };
 
   slider.init = config => {
-    if (config && typeof(config) === 'object') {
+    if (config && typeof (config) === 'object') {
       $.extend(slider.config, config);
     }
 
@@ -130,96 +130,123 @@ SimpleSlider.init({
 
 
 function typeWrite(target) {
-    var textHolder = target.text();
-    target.text("");
-    var toWrite = "";
-    var index = 0;
-    var interval = setInterval(function() {
-      if (index == textHolder.length) {
-        clearInterval(interval);
-      } else {
-        toWrite += textHolder[index];
-        index++;
-        target.text(toWrite);
-      }
-    }, 70)
-  }
-  
-  $(function(){
-      typeWrite($("#text"));
-  })
+  var textHolder = target.text();
+  target.text("");
+  var toWrite = "";
+  var index = 0;
+  var interval = setInterval(function () {
+    if (index == textHolder.length) {
+      clearInterval(interval);
+    } else {
+      toWrite += textHolder[index];
+      index++;
+      target.text(toWrite);
+    }
+  }, 70)
+}
 
-  $(window).scroll(function() {
-    $(".animation .anm_mod").each(function() {
-     const position = $(this).offset().top;
-     const scroll = $(window).scrollTop();
-     const windowHeight = $(window).height();
-     if (scroll > position - windowHeight) {
+$(function () {
+  typeWrite($("#text"));
+})
+
+$(window).scroll(function () {
+  $(".animation .anm_mod").each(function () {
+    const position = $(this).offset().top;
+    const scroll = $(window).scrollTop();
+    const windowHeight = $(window).height();
+    if (scroll > position - windowHeight) {
       $(this).addClass("active");
-     }
-     if (scroll < 100) {
+    }
+    if (scroll < 100) {
       $(this).removeClass("active");
-     }
-    });
-   });
-   
-   $(function() {
-    $('a[href^="#"]').click(function() {
-     const speed = 800;
-     const href = $(this).attr("href");
-     const target = $(href == "#" || href == "" ? "html" : href);
-     const position = target.offset().top;
-     $("html, body").animate({ scrollTop: position }, speed, "swing");
-     return false;
-    });
-   });
-   $(document).ready(function(){
- 
-    $(".filter-button").click(function(){
-        var value = $(this).attr('data-filter');
-        
-        if(value == "all")
-        {
-            //$('.filter').removeClass('hidden');
-            $('.filter').show('1000');
-        }
-        else
-        {
-    //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
-    //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
-            $(".filter").not('.'+value).hide('3000');
-            $('.filter').filter('.'+value).show('3000');
-            
-        }
-        if ($(".filter-button").removeClass("active")) {
-    $(this).removeClass("active");
+    }
+  });
+});
+
+$(function () {
+  $('a[href^="#"]').click(function () {
+    const speed = 800;
+    const href = $(this).attr("href");
+    const target = $(href == "#" || href == "" ? "html" : href);
+    const position = target.offset().top;
+    $("html, body").animate({ scrollTop: position }, speed, "swing");
+    return false;
+  });
+});
+$(document).ready(function () {
+
+  $(".filter-button").click(function () {
+    var value = $(this).attr('data-filter');
+
+    if (value == "all") {
+      //$('.filter').removeClass('hidden');
+      $('.filter').show('1000');
+    }
+    else {
+      //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+      //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+      $(".filter").not('.' + value).hide('3000');
+      $('.filter').filter('.' + value).show('3000');
+
+    }
+    if ($(".filter-button").removeClass("active")) {
+      $(this).removeClass("active");
     }
     $(this).addClass("active");
-    });
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-      const pageNumbers = document.querySelectorAll('.page-num');
-  
-      pageNumbers.forEach(page => {
-          page.addEventListener('click', function() {
-              // Remove active class from all
-              pageNumbers.forEach(p => p.classList.remove('active'));
-  
-              // Add active class to the clicked page
-              this.classList.add('active');
-          });
-      });
   });
-  
-    document.addEventListener("DOMContentLoaded", () => {
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const pageNumbers = document.querySelectorAll('.page-num');
+
+  pageNumbers.forEach(page => {
+    page.addEventListener('click', function () {
+      // Remove active class from all
+      pageNumbers.forEach(p => p.classList.remove('active'));
+
+      // Add active class to the clicked page
+      this.classList.add('active');
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
   const items = Array.from(track.children);
-  
+
   items.forEach(item => {
     const clone = item.cloneNode(true);
     track.appendChild(clone);
   });
 });
 
-  
-   
+$(document).ready(function () {
+  $('#loading').hide();
+  $('#success-message').hide();
+  $('form').on('submit', function (event) {
+    $('#loading').show();
+    event.preventDefault();
+    $(this).addClass('was-validated');
+    if (this.checkValidity()) {
+      var formData = $(this).serialize();
+      $.ajax({
+        type: 'POST',
+        url: 'enquire-now.php', // Replace with your server endpoint URL
+        data: formData,
+        success: function (response) {
+          $('#loading').hide();
+          $('form').removeClass('was-validated');
+          $('form')[0].reset();
+          $('#success-message').show();
+          $('#success-message').html('Thank you for submitting !!');
+          // $('#success-message').html(response.message);
+        },
+        error: function (error) {
+          $('#loading').hide();
+          $('form')[0].reset();
+          $('#success-message').show();
+          $('#success-message').html('Thank you for submitting !!');
+        }
+      });
+    }
+  });
+});

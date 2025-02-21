@@ -10,5 +10,6 @@ Project Setup
 ***__Best to use Docker__***
 
 - Clone Repo
+- install composer
 - docker-compose up -d
 - git clean -r

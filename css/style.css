@@ -391,6 +391,12 @@ textarea {
     padding-bottom: 7px;
     opacity: .9;
 }
+.pb-100{
+    padding-bottom: 100px;
+}
+.vs-lt img{
+    border-radius: 20px;
+}
 textarea:focus {
     border-color: #F47820 !important;
     box-shadow: 0 0 5px #F47820 !important;

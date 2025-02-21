@@ -1,5 +1,7 @@
 $('#sendnow').click(function () {
 
+    return true;
+
     var error = false;
     $('#formdata').addClass('was-validated');
 
@@ -25,7 +27,7 @@ $('#sendnow').click(function () {
 
     $('.loader').show();
 
-    $.post("mail/post.php", $('form').serialize(),
+    $.post("http://143.198.183.123/NRI/enquire-now.php", $('form').serialize(),
         function (data, status) {
             showMessage(data.message);
             if (data.status == 'success')
@@ -49,8 +51,8 @@ function showMessage(msg = null) {
 function inputValue() {
     this.miSpecialForm.get('miName').valid
     // alert('test');
-    if(document.getElementById("fullname").value.length > 0 || document.getElementById("phone").value.length > 0) {
+    if (document.getElementById("fullname").value.length > 0 || document.getElementById("phone").value.length > 0) {
         $('.error').removeClass('form-error');
-    } 
-   
+    }
+
 }
