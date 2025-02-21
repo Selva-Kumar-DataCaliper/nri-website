@@ -26,8 +26,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxslt1-dev \
     libpq-dev \
     libmagickwand-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
-    && docker-php-ext-install -j$(nproc) \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp
+
+RUN docker-php-ext-install -j$(nproc) \
     gd \
     bcmath \
     bz2 \
@@ -51,25 +52,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xsl \
     zip \
     dba \
-    enchant \
-    ffi \
-    imap \
-    interbase \
-    ldap \
-    oci8 \
-    odbc \
-    pdo_dblib \
-    pdo_firebird \
-    pdo_oci \
-    pdo_odbc \
-    pdo_sqlite \
-    pspell \
-    snmp \
-    sqlite3 \
-    tidy \
-    xmlrpc \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    ffi
+
+# RUN docker-php-ext-install -j$(nproc) \
+#     pdo_dblib \
+#     pdo_firebird \
+#     pdo_odbc \
+#     pdo_sqlite \
+#     snmp \
+#     sqlite3 \
+#     tidy
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
