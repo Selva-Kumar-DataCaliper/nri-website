@@ -1,44 +1,46 @@
 services:
-  db:
-    image: 'mysql:latest'
-    container_name: 'nri-db'
-    volumes:
-      - './db_data:/var/lib/mysql'
-      - ./my.cnf:/etc/mysql/conf.d/my.cnf
-
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: nri
-      MYSQL_USER: nri-user
-      MYSQL_PASSWORD: nri
-  wordpress:
+  apache:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: 'nri-core'
+    container_name: apache_php
     restart: always
     ports:
-      - '8000:80'
-    environment:
-      WORDPRESS_DB_HOST: 'db:3306'
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
+      - "8080:80"
     volumes:
-      - '.:/var/www/html'
+      - .:/var/www/html
     depends_on:
-      - db
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+
   phpmyadmin:
     image: 'phpmyadmin:latest'
-    container_name: 'nri-phpmyadmin'
+    container_name: phpmyadmin
     restart: always
     ports:
-      - '8080:80'
+      - "8081:80"
     environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: password
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
     depends_on:
-      - db
+      - mysql
+
 volumes:
-  db_data: null
+  mysql_data:
+
+    ## docker exec -it apache_php bash
+    ## docker exec -it apache_php sh

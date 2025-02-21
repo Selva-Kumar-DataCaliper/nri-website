@@ -1,15 +1,15 @@
-# Use the official WordPress image as the base image
-FROM wordpress:latest
+FROM php:8.4-apache
 
-# Update package lists
-RUN apt-get update
-
-# Install dependencies for PHP extensions
-RUN apt-get install -y \
-    libgmp-dev \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
+# Install required PHP extensions and dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    zip \
+    unzip \
+    curl \
+    git \
+    libgmp-dev \
     libwebp-dev \
     libxpm-dev \
     libvpx-dev \
@@ -25,7 +25,7 @@ RUN apt-get install -y \
     libsqlite3-dev \
     libxslt1-dev \
     libpq-dev \
-    libmagickwand-dev --no-install-recommends \
+    libmagickwand-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) \
     gd \
@@ -50,7 +50,35 @@ RUN apt-get install -y \
     sysvshm \
     xsl \
     zip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    dba \
+    enchant \
+    ffi \
+    imap \
+    interbase \
+    ldap \
+    oci8 \
+    odbc \
+    pdo_dblib \
+    pdo_firebird \
+    pdo_oci \
+    pdo_odbc \
+    pdo_sqlite \
+    pspell \
+    snmp \
+    sqlite3 \
+    tidy \
+    xmlrpc \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Clean up to reduce the image size
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Enable mod_rewrite for Apache
+RUN a2enmod rewrite
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Expose Apache port
+EXPOSE 80
