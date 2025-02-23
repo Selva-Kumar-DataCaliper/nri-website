@@ -222,15 +222,17 @@ document.addEventListener("DOMContentLoaded", () => {
 $(document).ready(function () {
   $('#loading').hide();
   $('#success-message').hide();
+
   $('form').on('submit', function (event) {
     $('#loading').show();
     event.preventDefault();
     $(this).addClass('was-validated');
     if (this.checkValidity()) {
       var formData = $(this).serialize();
+
       $.ajax({
         type: 'POST',
-        url: 'enquire-now.php', // Replace with your server endpoint URL
+        url: '/emailer/post.php', // Replace with your server endpoint URL
         data: formData,
         success: function (response) {
           $('#loading').hide();

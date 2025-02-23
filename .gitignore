@@ -2,3 +2,4 @@ error_log
 *.sql
 vendor/
 composer.lock
+emailer/post.php
