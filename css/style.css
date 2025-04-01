@@ -4,7 +4,6 @@ h1, h2, h3, h4, h5, h6 {
 } 
 p, li, a, span, label {
 font-family: 'Inter';
-
 } 
 a{
     text-decoration: none;
@@ -12,6 +11,12 @@ a{
 }
 p{
     line-height: 28px;
+}
+.navbar-expand-sm .navbar-nav .nav-link{
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 a:hover{
     color:#000;
@@ -50,11 +55,11 @@ a:hover{
     
     
 }
-.navbar-expand-sm .navbar-collapse {
+/* .navbar-expand-sm .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
     justify-content: space-around;
-}
+} */
 .sign-up{
     margin-left: 40px;
     border:2px solid #000;
@@ -153,6 +158,7 @@ a:hover{
     border-radius: 25px;
     padding: 35px;
     margin-top: 20px;
+    min-height: 350px;
 }
 .text-center-css {
     text-align: center;
@@ -1035,12 +1041,12 @@ color: #ffffff !important;
 
 /* Responsive CSS */
 @media only screen and (max-width: 768px) {
-    h1, h2, h3, h4, h5, h6 {
+    /* h1, h2, h3, h4, h5, h6 {
         font-size: calc(100% - 10px);
     }
     p, li, a, span, label {
         font-size: calc(100% - 5px);
-    }
+    } */
     .menu-item li {
         font-size: 16px;
         padding: 10px 0;
@@ -1058,10 +1064,28 @@ color: #ffffff !important;
         font-size: 14px;
     }
     .banner {
-        height: auto;
+        height: 185px;
         padding: 20px;
-        margin: 10px;
         background-size: cover;
+        border-radius: 10px;
+    }
+    .header-sec {
+        padding-bottom: 12px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .top-sec {
+        background-color: #fff;
+        margin-top: 40px;
+        padding-top: 150px;
+        border-radius: 10px;
+    }
+    .top-sec h2 {
+        font-size: 28px;
+    }
+    .navbar-expand-sm {
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .banner-title h1 {
         font-size: 32px;
@@ -1076,15 +1100,15 @@ color: #ffffff !important;
         padding: 50px 20px;
     }
     .container {
-        max-width: 100% !important;
-        padding: 10px;
+        max-width: 95% !important;
+        /* padding: 10px; */
     }
     .navbar-expand-sm .navbar-collapse {
         flex-direction: column;
         align-items: flex-start;
     }
     .top-sec {
-        padding: 20px;
+        padding: 10px;
     }
     .home-abt-us {
         padding: 20px;
@@ -1100,12 +1124,12 @@ color: #ffffff !important;
 }
 
 @media only screen and (max-width: 767px) {
-    h1, h2, h3, h4, h5, h6 {
+    /* h1, h2, h3, h4, h5, h6 {
         font-size: calc(100% - 15px);
     }
     p, li, a, span, label {
         font-size: calc(100% - 10px);
-    }
+    } */
     .menu-item li {
         font-size: 14px;
     }
@@ -1113,17 +1137,171 @@ color: #ffffff !important;
         font-size: 12px;
     }
     .logo {
-        width: 180px;
-        padding: 10px 0 !important;
+        width: 240px;
+        padding: 0 !important;
     }
     .sign-up, .sign-in {
-        font-size: 12px;
+        font-size: 16px;
         padding: 5px 15px;
+        margin-left: 0;
+    }
+    .carousel-container h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .form-container {
+        padding: 10px;
+    }
+    .footer-sec {
+        text-align: left;
+        background-color: #fff;
+        padding: 30px 30px 30px 30px;
+    }
+    .footer-sec h4{
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+    .pl-30 {
+        padding-left: 10px;
+    }
+    .pl-35 {
+        padding-left: 21px;
+    }
+    .text-al-lt {
+        text-align: center;
+    }
+    .cr-sec p {
+        font-size: 14px;
+        text-align: center;
+    } 
+    .carousel-container {
+        padding-top: 40px;
+    }
+    .text-al-rt {
+
+        padding-top: 0px;
+    }
+    .wd-60 p {
+        padding-bottom: 10px;
     }
     .banner-title h1 {
         font-size: 28px;
-        padding-top: 10%;
-        padding-left: 5%;
+        padding-top: 15%;
+        padding-left: 0;
+    }
+    .top-box-logi-con a {
+        text-decoration: none;
+        font-size: 22px;
+    }
+    .top-box-logi-con {
+        padding: 40px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    .top-box-logi-con {
+        width: 100%;
+    }
+    .mb-50 {
+        margin-bottom: 0;
+    }
+    .middle-hiw-txt p {
+        font-size: 16px;
+    }
+    .middle-hiw-txt-r p {
+        font-size: 16px;
+    }
+    .top-sec-con {
+        padding-top: 50px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .form-container-con {
+        width: 100%;
+        padding: 12px;
+        padding-bottom: 50px;
+    }
+    .wd-47 {
+        width: 100%;
+    }
+    .middle-hiw-txt {
+        padding: 50px 25px 50px 25px;
+        margin-bottom: 30px;
+    }
+    .middle-hiw-txt-r {
+        padding: 50px 25px 50px 25px;
+        margin-bottom: 30px;
+    }
+    .middle-hiw-img img {
+        margin-bottom: 30px;
+    }
+    .pt-90 {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    .mission {
+        padding-top: 40px;
+    }
+    .mission h2 {
+        font-size: 30px;
+    }
+    .prmgt-rc {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 20px;
+        /* height: auto; */
+        max-height: fit-content;
+    }
+    .vs-lt img {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .text-center-css h2 {
+        font-size: 32px;
+        padding-bottom: 0;
+    }
+    .contact-sec p {
+        font-size: 16px;
+    }
+    .wd-80 h2 {
+        font-size: 24px;
+    }
+    .mb-10 {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+    .text-center-css {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    .prmgt-rc li {
+        opacity: .8;
+        font-size: 16px;
+    }
+    .wd-80 p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .vs-lt {
+        padding: 0;
+    }
+    .pb-50 {
+        padding-bottom: 20px;
+    }
+    .middle-hiw-txt h1 {
+        padding-bottom: 25px;
+    }
+    .vs-rt {
+        background-color: #fff;
+        padding: 40px;
+        text-align: center;
+        margin-top: 40px;
+    }
+    .middle-hiw-txt-r h1 {
+        padding-bottom: 25px;
+    }
+    .form-container-con p {
+        padding-bottom: 20px;
     }
     .wd-60, .wd-48, .wd-15, .top-box {
         width: 100%;
@@ -1132,9 +1310,17 @@ color: #ffffff !important;
     .abt-sec-left {
         padding: 20px;
     }
+    .navbar-toggler-icon {
+        vertical-align:baseline;
+    }
     .navbar-expand-sm .navbar-collapse {
-        flex-direction: column;
-        align-items: flex-start;
+        position: absolute;
+        background-color: #fff;
+        top:100%;
+        width: 100%;
+        padding-left: 20px;
+        border: 2px solid green;
+        border-radius: 20px;
     }
     .service-row img {
         max-width: 80px;
@@ -1149,3 +1335,171 @@ color: #ffffff !important;
     }
 }
 
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .logo {
+        width: 250px;
+    }
+    .navbar-expand-sm .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+    .banner{
+        height: 380px;
+    }
+    .banner-title h1 {
+        font-size: 40px;
+    }
+    .pt-75 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .wd-80 h2 {
+        font-size: 28px;
+    }
+    .wd-80 p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .pt-90 {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+    .pb-100 {
+        padding-bottom: 25px;
+    }
+    .top-sec {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .wd-60 {
+        width: 80%;
+    }
+    .vs-rt {
+        padding: 50px;
+        width: 100%;
+        text-align: center;
+    }
+    .mission {
+        padding-top: 70px;
+    }
+    .pb-50 {
+        padding-bottom: 20px;
+    }
+    .mt-130 {
+        margin-top: 80px;
+    }
+    .contact-sec-left {
+        padding-right: 0;
+        padding-left: 40px;
+    }
+    .footer-sec h4{
+        font-size: 20px;
+    }
+    .footer-sec a{
+        font-size: 14px;
+    }
+    .pt-80{
+        padding-bottom: 0;
+    }
+    .top-box {
+      
+      width: 100%;
+    }
+    .top-sec h3 {
+        font-size: 20px;
+    }
+    .abt-sec-left {
+        padding: 0px 0px 25px 22px;
+    }
+    .abt-sec-left p {
+        font-size: 16px;
+        opacity: .8;
+    }
+    .abt-sec-right img{
+        padding-top: 60px;
+    }
+    .carousel-container {
+        padding-top: 60px;
+    }
+    .middle-hiw-txt {
+        padding: 30px 0px 10px 30px;
+    }
+    .middle-hiw-txt h1 {
+        padding-bottom: 0;
+    }
+    .middle-hiw-txt-r {
+        padding: 30px 0px 10px 30px;
+    }
+    .middle-hiw-txt-r h1 {
+        padding-bottom: 0;
+    }
+    .contact-sec h2 {
+        font-size: 32px;
+    }
+    .banner-title h1 {
+        padding-top: 4%;
+        padding-left: 2%;
+    }
+    .top-box-logi-con {
+        padding: 30px;
+    }
+    .top-box-logi-con a {
+        font-size: 24px;
+    }
+    .top-sec-con {
+        padding-top: 60px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .banner-shipping{
+        height: 135px;
+    }
+    .text-center-css {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .text-center-css h2 {
+        font-size: 30px;
+    }
+    .prmgt-rc {
+        max-height: fit-content;
+        width: 100%;
+    }
+    .prmgt-rc li {
+        font-size: 14px;
+    }
+    .search-button {
+        padding: 6px 30px;
+        font-size: 14px;
+    }
+    .vs-lt{
+        width: 100%;
+        padding: 0;
+    }
+    .vs-lt img {
+        height: 450px;
+        padding: 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .mb-10 {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+    /* .banner-title h1 {
+        font-size: 32px;
+        padding-top: 4%;
+        padding-left: 0%;
+    } */
+}
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .banner-shipping {
+        height: 170px;
+    }
+    .banner-title h1 {
+        padding-top:6%;
+        padding-left: 2%;
+    }
+}
