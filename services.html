@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>International Shipping Providers | NRI</title>
+    <title>Services | NRI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="" href="">
@@ -32,6 +32,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap"
         rel="stylesheet">
+        <!-- <style>
+            .active{
+                background-color: transparent !important;
+                color: #000 !important;
+                opacity:.6 !important ;
+            }
+        </style> -->
 </head>
 
 <body>
@@ -123,10 +130,11 @@
                                     <option value="" selected>--Select a service--</option>
                                     <option value="Property Management">Property Management</option>
                                     <option value="Nurse Services">Nurse Services</option>
-                                    <option value="Old Age Home">Old Age Home</option>
+                                    <option value="Elderly Care">Elderly Care</option>
                                     <option value="House Keeping Services">House Keeping Services</option>
                                     <option value="Government Documents">Government Documents</option>
-                                    <option value="Interior/Exterior Works">Interior/Exterior Works</option>
+                                    <option value="Visa & Immigration Services">Visa & Immigration Services</option>
+                                    <option value="Travel Companion">Travel Companion</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please select the service.
@@ -159,6 +167,142 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="enquiryModalTravel" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="enquiryModalLabel">Travel Companion Enquiry Form</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body container">
+              <form method="POST" class="needs-validation" novalidate>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label class="form-label">First Name *</label>
+                    <input type="text" class="form-control" name="first-name" required>
+                    <div class="invalid-feedback">Please enter your first name.</div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label class="form-label">Last Name *</label>
+                    <input type="text" class="form-control" name="last-name" required>
+                    <div class="invalid-feedback">Please enter your last name.</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" name="email" required>
+                    <div class="invalid-feedback">Please enter your valid email address.</div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-control" name="phone" required>
+                    <div class="invalid-feedback">Please enter your phone number.</div>
+                  </div>
+                </div>
+      
+                <div class="row">
+                  <div class="col-lg-6">
+                    <label class="form-label">Primary Passenger Name *</label>
+                    <input type="text" class="form-control" name="primary-passenger" required>
+                  </div>
+                  <div class="col-lg-3">
+                    <label class="form-label mar-top-21">Sex *</label>
+                    <select class="form-select" name="passenger-sex" required>
+                      <option value="">Select</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3">
+                    <label class="form-label mar-top-15">Age *</label>
+                    <input type="number" class="form-control" name="passenger-age" min="0" required>
+                  </div>
+                  
+                <div class="row mt-3">
+                    <div class="col-lg-6">
+                        <label class="form-label">Total Number of Passengers *</label>
+                        <input type="number" class="form-control" name="total-passengers" min="1" required>
+                        <div class="invalid-feedback">Please enter total number of passengers.</div>
+                      </div>
+                   
+                    </div>
+                  </div>
+      
+               
+      
+                  <div class="row mt-3">
+                    <div class="col-lg-6">
+                      <label class="form-label">Start Destination - State *</label>
+                      <select class="form-select" id="from-state" name="from-state" required onchange="updateCities('from')">
+                        <option value="">--Select State--</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Tamilnadu">Tamilnadu</option>
+                        <option value="Telangana">Telangana</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="form-label">Start Destination - City *</label>
+                      <select class="form-select" id="from-city" name="from-city" required>
+                        <option value="">--Select City--</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="row mt-3">
+                    <div class="col-lg-6">
+                      <label class="form-label">To Destination - State *</label>
+                      <select class="form-select" id="to-state" name="to-state" required onchange="updateCities('to')">
+                        <option value="">--Select State--</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Tamilnadu">Tamilnadu</option>
+                        <option value="Telangana">Telangana</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="form-label">To Destination - City *</label>
+                      <select class="form-select" id="to-city" name="to-city" required>
+                        <option value="">--Select City--</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mt-3">
+                    <div class="col-lg-6">
+                      <label class="form-label">Travel Date From *</label>
+                      <input type="date" class="form-control" id="travel-date-from" name="travel-date-from" required>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="form-label">Travel Date To *</label>
+                      <input type="date" class="form-control" id="travel-date-to" name="travel-date-to" required>
+                    </div>
+                  </div>
+                  
+      
+                <div class="mb-3 mt-3">
+                  <label class="form-label">Addional Information (Optional)</label>
+                  <textarea class="form-control" name="message" rows="3"></textarea>
+                </div>
+      
+                <button type="submit" class="search-button w-100">Submit Enquiry</button>
+      
+                <div id="loading" style="display: none; text-align: center; margin-top: 10px;">
+                  <div class="spinner-border text-success" role="status"></div>
+                </div>
+                <div id="success-message" style="display: none; text-align: center; margin-top: 10px; color: green;">
+                  <strong>Success!</strong> Your form has been submitted.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     <div claSS="body-clr">
         <div class="header-sec shipping-sec">
             <div class="container">
@@ -208,184 +352,19 @@
           <input class="search-input" type="text" placeholder="Search by keywords" class="search-input">
           <button class="search-button">Search</button>
         </div> -->
+        <div class="filter-btn-sec gallery-filter">
+            <button class="filter-button active search-button-filler" data-filter="property-management">Property Management</button>
+            <button class="filter-button search-button-filler" data-filter="nurse-services">Nurse Services</button>
+            <button class="filter-button search-button-filler" data-filter="elderly-care">Elderly Care</button>
+            <button class="filter-button search-button-filler" data-filter="house-keeping-services">House Keeping Services</button>
+            <button class="filter-button search-button-filler" data-filter="goverment-documents">Goverment Documents</button>
+            <button class="filter-button search-button-filler" data-filter="visa-immigration-services">Visa & Immigration Services</button>
+            <button class="filter-button search-button-filler" data-filter="travel-companion">Travel Companion</button>
+          </div>
             </div>
         </div>
-
-
-        <!--<div class="container pad-ex">
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        <div class="row service-row service-col-2"> 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2">
-                <img src="assests/img/shrara-logo.png">
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <h5>Shrara NRI Service</h5>
-                <p>Air, Ocean, RAIL, Road, Air Ticket & Custom 
-                    Travel Packages</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 service-col-2 plr-50">
-                <p>M : 98940 16304<br>
-                    E : accounts@myshrara.com</p>
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 service-col-2 plr-50 bd-n">
-                <a href="view-services.html">View More</a>
-            </div>
-        </div>
-        </div> -->
         <div class="container wd-80">
-            <div class="row mb-10">
+            <div class="row mb-10 property-management">
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
                     <h2>Property Management</h2>
                     <p>NRI Service Desk, we specialize in comprehensive property management solutions tailored for
@@ -417,11 +396,8 @@
 
                 </div>
             </div>
-            <div class="row mb-10">
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
-                    <img src="assests/img/nursing-services.png"></img>
-
-                </div>
+            <div class="row mb-10 nurse-services">
+              
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
                     <h2>Nurse Services</h2>
                     <p>Owning property in Tamil Nadu, India while residing abroad can be challenging, especially when it
@@ -446,14 +422,19 @@
                                 data-bs-target="#enquiryModal">Enquiry</button>
                         </div>
                     </div>
+                    
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
+                    <img src="assests/img/nursing-services.png"></img>
+
                 </div>
             </div>
-            <div class="row mb-10">
+            <div class="row mb-10 elderly-care">
 
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
-                    <h2>Old Age Home</h2>
+                    <h2>Eldery Care</h2>
                     <p>When living abroad, NRIs often seek safe, comfortable, and compassionate living arrangements for
-                        their aging parents in Tamil Nadu, India. Our Old Age Home services
+                        their aging parents in Tamil Nadu, India. Our elderly care services
                         provide a nurturing environment with care, ensuring the well-being of elderly
                         residents.</p>
                     <div class="row">
@@ -476,15 +457,12 @@
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
-                    <img src="assests/img/old-age-home.png"></img>
+                    <img src="assests/img/eldercare.png"></img>
 
                 </div>
             </div>
-            <div class="row mb-10">
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
-                    <img src="assests/img/house-keeping.png"></img>
-
-                </div>
+            <div class="row mb-10 house-keeping-services">
+               
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
                     <h2>House Keeping Services</h2>
                     <p>Maintaining a clean and welcoming home or property in Tamil Nadu, India can be challenging for
@@ -499,7 +477,7 @@
                                 <li>Deep cleaning for residential and commercial properties</li>
                                 <li>Pest control and sanitization
                                 </li>
-                                <li>Waste disposal and recycling management</li>
+                                <li>Waste disposal and recycling.</li>
                                 <li>Laundry and home organization services</li>
 
                             </ul>
@@ -510,8 +488,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
+                    <img src="assests/img/house-keeping-ser.png"></img>
+
+                </div>
             </div>
-            <div class="row mb-10">
+            <div class="row mb-10 goverment-documents" id="goverment-documents">
 
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
                     <h2>Goverment Documents</h2>
@@ -540,14 +522,12 @@
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
-                    <img src="assests/img/godums.png"></img>
+                    <img src="assests/img/goverment-doc.png"></img>
 
                 </div>
             </div>
-            <div class="row mb-10">
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
-                    <img src="assests/img/int-ext.png"></img>
-                </div>
+            <div class="row mb-10 visa-immigration-services">
+              
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
                     <h2>Visa & Immigration Services</h2>
                     <p>As an NRI, navigating visa and immigration processes can be complex and time-consuming.
@@ -570,59 +550,76 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
+                    <img src="assests/img/int-ext.png"></img>
+                </div>
             </div>
-        </div>
 
+            <div class="row mb-10 travel-companion">
+                              <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
+                    <h2>Travel Companion</h2>
+                    <p>Planning a trip to India or heading back abroad? Whether it’s a solo trip or with family, NRI Service Desk is here to make your travel worry-free and more enjoyable. 
+                        Our Travel Companion service is designed to support Non-Resident Indians throughout their journey—right from departure to arrival and everything in between.</p>
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-xs-12 col-sm-12">
+                            <ul>
+                                <li>Pre-Travel Planning</li>
+                                <li>Airport Assistance</li>
+                                <li>Escort Services</li>
+                                <li>On-Call Support</li>
+                                <li>Local Guidance & Pickup</li>
 
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
+                            <button class="search-button" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModalTravel">Enquiry</button>
+    
 
-        <div class="top-sec container pb-100">
-            <div class="wd-60">
-                <h2 class="pb-10">How It Works</h2>
-                <p> we’re not just another directory. We are a trusted partner for NRIs seeking dependable logistics
-                    solutions. Our platform is built to save you time, reduce complexity, and provide confidence in
-                    every logistics service you book.
-                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
+                    <img src="assests/img/travel-2.png"></img>
+                </div>
             </div>
-            <!-- <div class="row">
-            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 dsf wd-48">
-                <div class="dsf-inner">
-                <h3>Search and Explore</h3>
-                <img src="assests/img/icon-7.png"></div>
-                
-                <p>We only list thoroughly vetted and reliable logistics service providers, ensuring that you can trust the professionals you connect with for your shipping, relocation, and logistics needs.</p>
-                <img class="wd-22" src="assests/img/arrow-top-l.png">
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-6 col-sm-6 dsf wd-15">
-                <div class="dsf-inner pb-45">
-                    <h3>Compare 
-                        And Select </h3>
+            <div class="main-ly-abt testimonial-sec">
+                <div class="container">
+                 
+                  <h1>Testimonials 
+                    <h3>Clients Sharing Their Experience</h3>
+                  
+                  <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-track">
+                      <div class="testimonial-item">
+                        <p>"Managing my property back in India used to be a nightmare—until I found NRI Service Desk. They handled everything from tenant management to maintenance with such professionalism. I now have peace of mind knowing my investment is in good hands!"</p>
+                        <div class="client-name">—  Rajkumar M., New York USA —</div>
+                        <div class="stars">★★★★★</div>
+                      </div>
+                      <div class="testimonial-item">
+                        <p>"My elderly parents live alone in Bangalore, and it was hard coordinating their medical and daily care from overseas. NRI Service Desk arranged reliable nurse services and housekeeping support, and now my parents are more comfortable than ever. Truly a lifesaver."</p>
+                        <div class="client-name">— Sathya Vinod., Apex USA —</div>
+                        <div class="stars">★★★★★</div>
+                      </div>
+                      <div class="testimonial-item">
+                        <p>"Getting my Aadhaar and property paperwork sorted from abroad felt impossible, but NRI Service Desk made it so easy. Their team took care of all the government formalities quickly and kept me updated at every step. Highly recommend their service."</p>
+                        <div class="client-name">— Surya Prakash., Texas  USA —</div>
+                        <div class="stars">★★★★★</div>
+                      </div>
                     </div>
                     
-                    
-                    <img class="wd-22" src="assests/img/arrow-top-l.png">
-                
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-6 col-sm-6 dsf wd-15">
-                <div class="dsf-inner pb-45">
-                    <h3>Connect 
-                        And Book</h3>
+                    <div class="testimonial-indicators">
+                      <span class="dot active" data-slide="0"></span>
+                      <span class="dot" data-slide="1"></span>
+                      <span class="dot" data-slide="2"></span>
                     </div>
-                    
-                    
-                    <img class="wd-22" src="assests/img/arrow-top-l.png">
-                
-            </div>
-            <div class="col-lg-2 col-md-2 col-xs-6 col-sm-6 dsf wd-15">
-                <div class="dsf-inner pb-45">
-                    <h3>Track And 
-                        Review </h3>
-                    </div>
-                    
-                    
-                    <img class="wd-22" src="assests/img/arrow-top-l.png">
-                
-            </div> -->
-        </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+
+</div>
         <div class="container contact-sec top-sec pt-130">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 contact-sec-left">
@@ -719,49 +716,78 @@
 </div> 
 </div>
 </div>-->
-        <div class="container footer-sec">
+<div class="container footer-sec">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            
+            <h4>Call Our Team</h4>
             <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                    <h4>Call <span class="pl-35"> +91 90476 46298</span> </h4>
-                    <h4>Email <span class="pl-30"> Info@nriservicedesk.com</span></h4>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <p>Services</p>
-                    <ul>
-                        <li><a href="services.html">Property Management</a></li>
-                        <li><a href="services.html">Nurse Services</a></li>
-                        <li><a href="services.html">Old age Home</a></li>
-                        <li><a href="services.html">House Keeping</a></li>
-                        <li><a href="services.html">Goverment Documants</a></li>
-                        <li><a href="services.html">Visa & Immigration Services</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                    <p>Quick Links</p>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="howitworks.html">How it works</a></li>
-                        <!-- <li><a href="">Blogs</a></li>  -->
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                    <h5>Ezhil</h5></div>
+                    <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                    <h5><a href="tel:+916374024055">+91 63740 24055</a>   (Tamil - Engilsh) <label>3.30AM - 4:30AM EST | 7.30AM to 10:00AM EST</label></h5>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                        <h5>Kiruthi</h5></div>
+                        <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                        <h5><a href="tel:+917867075706">+91 78670 75706</a>  (Tamil - Engilsh) <label>4:30AM - 7.30AM EST </label></h5></div>
+            
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+            <h5>Sweety</h5></div>
+            <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+            <h5><a href="tel:+919003943277">+91 90039 43277</a>  (Tamil - Engilsh) <label>10:00AM - 2:30PM EST | 12:30AM - 3:30AM EST</label></h5></div>
+            <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">   
+                <h5>Kalaikovan</h5> </div>
+                <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                    <h5><a href="tel:+919047646298">+91 90476 46298</a>  (Tamil - Engilsh - Hindi)<label> 5:30PM - 12:30AM EST</label></h5>
+                       
+                    </div>
+           
+          
             </div>
+            
         </div>
-        <div class="container cr-sec">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 text-al-lt">
-                    <p>© 2024 NRI Service Desk, Incorporated All Rights Reserved</p>
-                </div>
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 text-al-rt">
-                    <p>Design by <a href="https://datacaliper.com/" target="_blank">Datacaliper</a></p>
-                </div>
-            </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <h4>Email</h4>
+                <h5><a href="">Info@nriservicedesk.com</a></h5>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="services.html">Property Management</a></li>
+                <li><a href="services.html">Nurse Services</a></li>
+                <li><a href="services.html">Elderly Care</a></li>
+                <li><a href="services.html">House Keeping</a></li>
+                <li><a href="services.html">Goverment Documents</a></li>
+                <li><a href="services.html">Visa & Immigration Services</a></li>
+                <li><a href="services.html">Travel Companion</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="howitworks.html">How it works</a></li>
+                <!-- <li><a href="">Blogs</a></li>  -->
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
 
     </div>
+</div>
+<div class="container cr-sec">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-al-lt">
+            <p>© 2024 NRI Service Desk, Incorporated All Rights Reserved</p>
+        </div>
+       
+    </div>
+</div>
+
+</div>
 
 
 </body>
@@ -794,5 +820,194 @@
         }, 2000); // Simulate delay
     }
 </script> -->
-
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-button");
+        const serviceRows = document.querySelectorAll(".container.wd-80 .row.mb-10");
+    
+        // Show only the 'property-management' section initially
+        serviceRows.forEach(row => {
+            if (row.classList.contains("property-management")) {
+                row.style.display = "flex";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    
+        // Set 'property-management' button as active initially
+        filterButtons.forEach(btn => {
+            if (btn.getAttribute("data-filter") === "property-management") {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+    
+        // Add click event listeners
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+    
+                const filterValue = this.getAttribute("data-filter");
+    
+                serviceRows.forEach(row => {
+                    if (row.classList.contains(filterValue)) {
+                        row.style.display = "flex";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            });
+        });
+    });
+    </script>
+      <script>
+        const stateCityMap = {
+          "Andhra Pradesh": ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Kadapa", "Krishna", "Kurnool", "Nellore", "Prakasam", "Srikakulam", "Visakhapatnam", "Vizianagaram", "West Godavari"],
+          "Kerala": ["Thiruvananthapuram", "Kollam", "Pathanamthitta", "Alappuzha", "Kottayam", "Idukki", "Ernakulam", "Thrissur", "Palakkad", "Malappuram", "Kozhikode", "Wayanad", "Kannur", "Kasaragod"],
+          "Pondicherry":["Pondicherry"],
+          "Karnataka": ["Bagalkot", "Ballari", "Belagavi", "Bengaluru Rural", "Bengaluru Urban", "Bidar", "Chamarajanagar", "Chikkaballapur", "Chikmagalur", "Chitradurga", "Dakshina Kannada", "Davangere", "Dharwad", "Gadag", "Hassan", "Haveri", "Kalaburagi", "Kodagu", "Kolar", "Koppal", "Mandya", "Mysuru", "Raichur", "Ramanagara", "Shivamogga", "Tumakuru", "Udupi", "Uttara Kannada", "Vijayapura", "Yadgir"],
+          "Tamilnadu": ["Ariyalur", "Chengalpattu", "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode", "Kallakurichi", "Kanchipuram", "Kanniyakumari", "Karur", "Krishnagiri", "Madurai", "Mayiladuthurai", "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukkottai", "Ramanathapuram", "Ranipet", "Salem", "Sivaganga", "Tenkasi", "Thanjavur", "Theni", "Thoothukudi", "Tiruchirappalli", "Tirunelveli", "Tiruvarur", "Tiruvallur", "Tiruppur", "Tiruvannamalai", "Vellore", "Viluppuram", "Virudhunagar"],
+          "Telangana": ["Adilabad", "Bhadradri Kothagudem", "Hyderabad", "Jagtial", "Jangaon", "Jayashankar Bhupalpally", "Jogulamba Gadwal", "Kamareddy", "Karimnagar", "Khammam", "Komaram Bheem", "Mahabubabad", "Mahabubnagar", "Mancherial", "Medak", "Medchal-Malkajgiri", "Mulugu", "Nagarkurnool", "Nalgonda", "Narayanpet", "Nirmal", "Nizamabad", "Peddapalli", "Rajanna Sircilla", "Ranga Reddy", "Sangareddy", "Siddipet", "Suryapet", "Vikarabad", "Wanaparthy", "Warangal Urban", "Warangal Rural", "Yadadri Bhuvanagiri"]
+        };
+      
+        function updateCities(type) {
+          const stateSelect = document.getElementById(`${type}-state`);
+          const citySelect = document.getElementById(`${type}-city`);
+          const cities = stateCityMap[stateSelect.value] || [];
+      
+          citySelect.innerHTML = '<option value="">--Select City--</option>';
+          cities.forEach(city => {
+            const option = document.createElement("option");
+            option.value = city;
+            option.textContent = city;
+            citySelect.appendChild(option);
+          });
+        }
+      </script>
+      
+      
+      <script>
+        const slider = document.getElementById('testimonialSlider');
+        const track = slider.querySelector('.testimonial-track');
+        const items = slider.querySelectorAll('.testimonial-item');
+        const dots = slider.querySelectorAll('.dot');
+        let current = 0;
+        const total = items.length;
+      
+        function goToSlide(index) {
+          track.style.transform = `translateX(-${index * 100}%)`;
+          items.forEach(item => item.classList.remove('active'));
+          dots.forEach(dot => dot.classList.remove('active'));
+          items[index].classList.add('active');
+          dots[index].classList.add('active');
+          current = index;
+        }
+      
+        dots.forEach(dot => {
+          dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-slide'));
+            goToSlide(index);
+          });
+        });
+      
+        // Auto slide every 5 seconds
+        setInterval(() => {
+          let next = (current + 1) % total;
+          goToSlide(next);
+        }, 5000);
+      
+        // Init
+        goToSlide(0);
+      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const today = new Date().toISOString().split("T")[0];
+          const fromInput = document.getElementById("travel-date-from");
+          const toInput = document.getElementById("travel-date-to");
+      
+          // Set minimum date for both inputs to today
+          fromInput.setAttribute("min", today);
+          toInput.setAttribute("min", today);
+      
+          fromInput.addEventListener("change", function () {
+            const fromDate = fromInput.value;
+      
+            // Update "to" input min based on selected "from" date
+            if (fromDate) {
+              toInput.min = fromDate;
+      
+              // Optional: clear the "to" date if it's now invalid
+              if (toInput.value && toInput.value < fromDate) {
+                toInput.value = "";
+              }
+            } else {
+              toInput.min = today;
+            }
+          });
+        });
+      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hash = window.location.hash.substring(1); // remove #
+            if (hash) {
+                const filterButtons = document.querySelectorAll(".filter-button");
+                filterButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                    if (btn.dataset.filter === hash) {
+                        btn.classList.add("active");
+                        // Show the matching section
+                        const allSections = document.querySelectorAll(".mb-10");
+                        allSections.forEach(section => {
+                            section.style.display = "none";
+                        });
+        
+                        const targetSection = document.querySelector("." + hash);
+                        if (targetSection) {
+                            targetSection.style.display = "flex"; // or "block" as needed
+                        }
+                    }
+                });
+            }
+        });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hash = window.location.hash.substring(1); // get the section id
+            
+                if (hash) {
+                    const filterButtons = document.querySelectorAll(".filter-button");
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove("active");
+                        if (btn.dataset.filter === hash) {
+                            btn.classList.add("active");
+            
+                            // Hide all sections
+                            const allSections = document.querySelectorAll(".mb-10");
+                            allSections.forEach(section => {
+                                section.style.display = "none";
+                            });
+            
+                            // Show the target section
+                            const targetSection = document.querySelector("." + hash);
+                            if (targetSection) {
+                                targetSection.style.display = "flex"; // or "block", based on your layout
+            
+                                // Scroll to the section after a short delay
+                                setTimeout(() => {
+                                    targetSection.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                    });
+                                }, 300); // delay to ensure layout has updated
+                            }
+                        }
+                    });
+                }
+            });
+            </script>
+            
+        
+      
 </html>
