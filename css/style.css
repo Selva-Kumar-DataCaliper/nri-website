@@ -693,13 +693,13 @@ textarea {
 
 .banner-shipping {
     background-image: url(../assests/img/shipping-banner.png);
-    height: 365px;
+    height: 180px;
 }
-.banner-shipping h1{
-    padding-top:10%;
+.banner-shipping h1 {
+    padding-top: 4%;
     text-align: center;
     padding-left: 0;
-    font-size: 40px;
+    font-size: 52px;
 }
 .text-center-css h2{
     font-size: 40px;
