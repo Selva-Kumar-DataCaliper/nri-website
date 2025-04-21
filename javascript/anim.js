@@ -224,41 +224,50 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $(document).ready(function () {
-  $('#loading').hide();
-  $('#success-message').hide();
+  $('.loading').hide();
+  $('.success-message').hide();
 
   $('form').on('submit', function (event) {
-    $('#loading').show();
+    $('.loading').show();
 
     event.preventDefault();
     $(this).addClass('was-validated');
     if (this.checkValidity()) {
       $(this).find(':submit').prop('disabled', true);
-      var formData = $(this).serialize();
 
+
+      var formData = $(this).serialize();
       $.ajax({
         type: 'POST',
         url: '/emailer/post.php', // Replace with your server endpoint URL
         data: formData,
         success: function (response) {
-          $('#loading').hide();
+          $('.loading').hide();
           $('form').removeClass('was-validated');
           $('form')[0].reset();
-          $('#success-message').show();
-          // $('#success-message').html('Thank you for submitting !!');
-          $('#success-message').html(response.message);
+          if ($('form')[1]) {
+            $('form')[1].reset();
+          }
+
+          $('.success-message').show();
+          // $('.success-message').html('Thank you for submitting !!');
+          $('.success-message').html(response.message);
           $(this).find(':submit').prop('disabled', false);
         },
         error: function (error) {
-          $('#loading').hide();
+          $('.loading').hide();
           $('form')[0].reset();
-          $('#success-message').show();
-          $('#success-message').html(response.message);
+          if ($('form')[1]) {
+            $('form')[1].reset();
+          }
+          $('.success-message').show();
+          $('.success-message').html(response.message);
           $(this).find(':submit').prop('disabled', false);
         }
       });
+
     } else {
-      $('#loading').hide();
+      $('.loading').hide();
       $(this).find(':submit').prop('disabled', false);
     }
   });
