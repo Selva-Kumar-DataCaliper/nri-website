@@ -224,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $(document).ready(function () {
+  $('.success-message').html('');
   $('.loading').hide();
   $('.success-message').hide();
 
@@ -233,9 +234,10 @@ $(document).ready(function () {
     event.preventDefault();
     $(this).addClass('was-validated');
     if (this.checkValidity()) {
-      $(this).find(':submit').prop('disabled', true);
 
-
+      var extingForm = $(this).find(':submit');
+      extingForm.prop('disabled', true);
+      // $(this).find(':submit').prop('disabled', true);
       var formData = $(this).serialize();
       $.ajax({
         type: 'POST',
@@ -250,9 +252,8 @@ $(document).ready(function () {
           }
 
           $('.success-message').show();
-          // $('.success-message').html('Thank you for submitting !!');
           $('.success-message').html(response.message);
-          $(this).find(':submit').prop('disabled', false);
+          extingForm.prop('disabled', false);
         },
         error: function (error) {
           $('.loading').hide();
@@ -262,13 +263,13 @@ $(document).ready(function () {
           }
           $('.success-message').show();
           $('.success-message').html(response.message);
-          $(this).find(':submit').prop('disabled', false);
+          extingForm.prop('disabled', false);
         }
       });
 
     } else {
       $('.loading').hide();
-      $(this).find(':submit').prop('disabled', false);
+      extingForm.prop('disabled', true);
     }
   });
 });

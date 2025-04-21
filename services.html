@@ -751,30 +751,7 @@
 <script src="javascript/custom.js"></script>
 <script src="javascript/anim.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<!-- <script>document.querySelector('.search-button').addEventListener('click', () => {
-    const query = document.querySelector('.search-input').value;
-    if (query) {
-      alert(`Searching for: ${query}`);
-    } else {
-      alert('Please enter a keyword to search.');
-    }
-  });</script> -->
-<!-- <script>
-    function handleSubmit(event) {
-        event.preventDefault(); // Prevent actual form submission
-        const form = event.target;
-        
-        // Show loading icon
-        document.getElementById("loading").style.display = "block";
 
-        // Simulate an async operation (e.g., form submission)
-        setTimeout(() => {
-            document.getElementById("loading").style.display = "none"; // Hide loading
-            document.getElementById("success-message").style.display = "block"; // Show success message
-            form.reset(); // Reset the form
-        }, 2000); // Simulate delay
-    }
-</script> -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const filterButtons = document.querySelectorAll(".filter-button");
@@ -960,6 +937,12 @@
                 }
             });
         }
+    });
+
+
+    $('.search-button-filler').on('click', function () {
+        $('.success-message').html('');
+
     });
 </script>
 
