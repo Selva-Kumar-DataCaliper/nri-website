@@ -93,7 +93,7 @@
                     <p>We only list thoroughly vetted and reliable service providers, ensuring that you can trust the
                         professionals you connect with for your specific services, Property management, Nurse services
                         etc...</p>
-                        <a href="services.html"><button class="sign-in">Explore</button></a>
+                    <a href="services.html"><button class="sign-in">Explore</button></a>
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 wd-47 middle-hiw-img pad-lr">
@@ -112,7 +112,7 @@
                     <h1>Compare And Select </h1>
                     <p>View provider profiles, compare services, read reviews, and check ratings to choose the logistics
                         company that fits your requirements.</p>
-                        <a href="services.html"><button class="sign-in">Explore</button></a>
+                    <a href="services.html"><button class="sign-in">Explore</button></a>
 
                 </div>
             </div>
@@ -123,7 +123,7 @@
                     <h1>Connect And Book</h1>
                     <p>Once you’ve found the right provider, easily connect with them through our platform to discuss
                         your needs, get quotes, and book your services.</p>
-                        <a href="contact.html"><button class="sign-in">Explore</button></a>
+                    <a href="contact.html"><button class="sign-in">Explore</button></a>
 
 
                 </div>
@@ -143,7 +143,7 @@
                     <h1>Track And Review</h1>
                     <p>After using a service provider, you can leave feedback and reviews to help other NRIs make
                         informed choices and improve the quality of future services.</p>
-                        <a href="services.html"><button class="sign-in">Explore</button></a>
+                    <a href="services.html"><button class="sign-in">Explore</button></a>
 
                 </div>
             </div>
@@ -202,19 +202,22 @@
                                 <textarea id="message" placeholder="Message" name="message" rows="6"
                                     class="form-control"></textarea>
                             </div>
-                            <button type="submit" class="submit-button btn btn-primary">Submit</button>
-                            <!-- Loading Icon (Hidden by Default) -->
-                            <div id="loading" style="display:none;text-align: center; margin-top: -60px;">
+                            
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                    <button type="submit" id="submit-button" class="submit-button btn btn-primary">
+                                        Submit</button>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                    <span id="loading" class="spinner-border mt-3 "></span>
+                                    <!-- Success Message (Hidden by Default) -->
+                                    <div id="success-message" class="mt-3 text-success"
+                                        style="display:none;  color: green;"> </div>
+                                </div>
                             </div>
 
-                            <!-- Success Message (Hidden by Default) -->
-                            <div id="success-message"
-                                style="display:none;text-align: center; margin-top: 10px; color: green;">
-                                <div class="spinner-border text-success" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                                <strong>Success!</strong> Your form has been submitted.
-                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -246,33 +249,43 @@
         <div class="container footer-sec">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    
+
                     <h4>Call Our Team</h4>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
-                            <h5>Ezhil</h5></div>
-                            <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                            <h5><a href="tel:+916374024055">+91 63740 24055</a>   (Tamil - Engilsh) <label>3.30AM - 4:30AM EST | 7.30AM - 10:00AM EST</label></h5>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
-                                <h5>Kiruthi</h5></div>
-                                <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                                <h5><a href="tel:+917867075706">+91 78670 75706</a>  (Tamil - Engilsh) <label>4:30AM - 7.30AM EST </label></h5></div>
-                    
-                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
-                    <h5>Sweety</h5></div>
-                    <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                    <h5><a href="tel:+919003943277">+91 90039 43277</a>  (Tamil - Engilsh) <label>10:00AM - 2:30PM EST | 12:30AM - 3:30AM EST</label></h5></div>
-                    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">   
-                        <h5>Kalaikovan</h5> </div>
+                            <h5>Ezhil</h5>
+                        </div>
                         <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                            <h5><a href="tel:+919047646298">+91 90476 46298</a>  (Tamil - Engilsh - Hindi)<label> 5:30PM - 12:30AM EST</label></h5>
-                               
-                            </div>
-                   
-                  
+                            <h5><a href="tel:+916374024055">+91 63740 24055</a> (Tamil - Engilsh) <label>3.30AM - 4:30AM
+                                    EST | 7.30AM - 10:00AM EST</label></h5>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                            <h5>Kiruthi</h5>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                            <h5><a href="tel:+917867075706">+91 78670 75706</a> (Tamil - Engilsh) <label>4:30AM - 7.30AM
+                                    EST </label></h5>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                            <h5>Sweety</h5>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                            <h5><a href="tel:+919003943277">+91 90039 43277</a> (Tamil - Engilsh) <label>10:00AM -
+                                    2:30PM EST | 12:30AM - 3:30AM EST</label></h5>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                            <h5>Kalaikovan</h5>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                            <h5><a href="tel:+919047646298">+91 90476 46298</a> (Tamil - Engilsh - Hindi)<label> 5:30PM
+                                    - 12:30AM EST</label></h5>
+
+                        </div>
+
+
                     </div>
-                    
+
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                     <h4>Email</h4>
@@ -310,7 +323,7 @@
                 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-al-lt">
                     <p>© 2024 NRI Service Desk, Incorporated All Rights Reserved</p>
                 </div>
-               
+
             </div>
         </div>
 

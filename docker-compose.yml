@@ -43,7 +43,7 @@ services:
 volumes:
   custom_mysql_data:
     name: my_custom_mysql_data
-    external: true
+    external: false
 
 
 

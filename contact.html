@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="NRI Service Desk">
     <meta property="og:url" content="https://nriservicedesk.com/">
-    
+
     <link href="css/bootsrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -90,9 +90,10 @@
                 <h2>We’re here to help! we make it easy for Non-Resident Indians (NRIs) to find and connect with trusted
                     service providers for all their needs.</h2>
                 <p> Whether you’re looking for help with Property Management, Home Nurse Services, Elder Care, House
-                    Keeping, Goverment Documents, or Interior/Exterior Works, Visa & Immigration Services, we’re just a message away.</p>
+                    Keeping, Goverment Documents, or Interior/Exterior Works, Visa & Immigration Services, we’re just a
+                    message away.</p>
             </div>
-            
+
             <div class="row">
                 <h3>Call Our Team</h3>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 top-box-logi-con">
@@ -100,9 +101,9 @@
                     <h4>Ezhil</h4>
                     <label>Tamil | Engilsh</label>
                     <h4><a href="tel:+916374024055"> +91 63740 24055</a></h4>
-                    
+
                     <p>3.30AM - 4:30AM EST<br>
-                    7.30AM - 10:00AM EST</p>
+                        7.30AM - 10:00AM EST</p>
 
 
                 </div>
@@ -114,7 +115,7 @@
                     <p>5:30PM - 12:30AM EST</p>
 
                 </div>
-                
+
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 top-box-logi-con">
                     <i class="fa fa-phone-square" aria-hidden="true"></i>
                     <h4>Sweety</h4>
@@ -135,23 +136,27 @@
 
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
                     <div class="address-sec">
-                    <h4><i class="fa fa-map-marker" aria-hidden="true"></i> Address</h4>
-                    <p>7/2, Shiva Shree Towers,<br> Shiva Nagar, Upplipalayam, <br>Coimbatore, Tamilnadu-641015, India</p>
-                    <h4> <i class="fa fa-envelope" aria-hidden="true"></i> Email</h4>
-                    <p><a href="mailto:help@nriservicedesk.com">help@nriservicedesk.com</a></p>
+                        <h4><i class="fa fa-map-marker" aria-hidden="true"></i> Address</h4>
+                        <p>7/2, Shiva Shree Towers,<br> Shiva Nagar, Upplipalayam, <br>Coimbatore, Tamilnadu-641015,
+                            India</p>
+                        <h4> <i class="fa fa-envelope" aria-hidden="true"></i> Email</h4>
+                        <p><a href="mailto:help@nriservicedesk.com">help@nriservicedesk.com</a></p>
                     </div>
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
                     <div class="maps">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125319.11917108721!2d76.92885501811575!3d11.021928030329526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85785b55e5aff%3A0xb32c272350eb251f!2sSri%20Towers!5e0!3m2!1sen!2sin!4v1744351655281!5m2!1sen!2sin" width="100%" height="435" style="border:0; border-radius: 25px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125319.11917108721!2d76.92885501811575!3d11.021928030329526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85785b55e5aff%3A0xb32c272350eb251f!2sSri%20Towers!5e0!3m2!1sen!2sin!4v1744351655281!5m2!1sen!2sin"
+                            width="100%" height="435" style="border:0; border-radius: 25px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
 
 
         </div>
-        
+
 
         <div class="container contact-sec top-sec-con">
             <div class="form-container-con">
@@ -198,20 +203,28 @@
                         <textarea id="message" placeholder="Message" name="message" rows="6"
                             class="form-control"></textarea>
                     </div>
-                    <button type="submit" class="submit-button btn btn-primary">Submit</button>
-                    <!-- Loading Icon (Hidden by Default) -->
-                    <div id="loading" style="display: none; text-align: center; margin-top: 10px;">
 
-                    </div>
 
-                    <!-- Success Message (Hidden by Default) -->
-                    <div id="success-message"
-                        style="display: none; text-align: center; margin-top: 10px; color: green;z-index: 9999;margin-top: -30px;">
-                        <div class="spinner-border text-success" role="status">
-                            <span class="sr-only">Loading...</span>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                            <button type="submit" id="submit-button" class="submit-button btn btn-primary">
+                                Submit</button>
                         </div>
-                        <strong>Success!</strong> Your form has been submitted.
+                        <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                            <span id="loading" class="spinner-border mt-3 "></span>
+                            <!-- Success Message (Hidden by Default) -->
+                            <div id="success-message" class="mt-3 text-success" style="display:none;  color: green;">
+                            </div>
+                        </div>
                     </div>
+
+
+
+
+
+
+
+
                 </form>
             </div>
         </div>
@@ -220,33 +233,43 @@
         <div class="container footer-sec">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    
+
                     <h4>Call Our Team</h4>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
-                            <h5>Ezhil</h5></div>
-                            <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                            <h5><a href="tel:+916374024055">+91 63740 24055</a>   (Tamil - Engilsh) <label>3.30AM - 4:30AM EST | 7.30AM to 10:00AM EST</label></h5>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
-                                <h5>Kiruthi</h5></div>
-                                <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                                <h5><a href="tel:+917867075706">+91 78670 75706</a>  (Tamil - Engilsh) <label>4:30AM - 7.30AM EST </label></h5></div>
-                    
-                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
-                    <h5>Sweety</h5></div>
-                    <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                    <h5><a href="tel:+919003943277">+91 90039 43277</a>  (Tamil - Engilsh) <label>10:00AM - 2:30PM EST | 12:30AM - 3:30AM EST</label></h5></div>
-                    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">   
-                        <h5>Kalaikovan</h5> </div>
+                            <h5>Ezhil</h5>
+                        </div>
                         <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                            <h5><a href="tel:+919047646298">+91 90476 46298</a>  (Tamil - Engilsh - Hindi)<label> 5:30PM - 12:30AM EST</label></h5>
-                               
-                            </div>
-                   
-                  
+                            <h5><a href="tel:+916374024055">+91 63740 24055</a> (Tamil - Engilsh) <label>3.30AM - 4:30AM
+                                    EST | 7.30AM to 10:00AM EST</label></h5>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                            <h5>Kiruthi</h5>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                            <h5><a href="tel:+917867075706">+91 78670 75706</a> (Tamil - Engilsh) <label>4:30AM - 7.30AM
+                                    EST </label></h5>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                            <h5>Sweety</h5>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                            <h5><a href="tel:+919003943277">+91 90039 43277</a> (Tamil - Engilsh) <label>10:00AM -
+                                    2:30PM EST | 12:30AM - 3:30AM EST</label></h5>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                            <h5>Kalaikovan</h5>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
+                            <h5><a href="tel:+919047646298">+91 90476 46298</a> (Tamil - Engilsh - Hindi)<label> 5:30PM
+                                    - 12:30AM EST</label></h5>
+
+                        </div>
+
+
                     </div>
-                    
+
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                     <h4>Email</h4>
@@ -284,7 +307,7 @@
                 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-al-lt">
                     <p>© 2024 NRI Service Desk, Incorporated All Rights Reserved</p>
                 </div>
-               
+
             </div>
         </div>
 
