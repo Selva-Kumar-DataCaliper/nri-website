@@ -36,6 +36,749 @@
 </head>
 
 <body>
+    <div class="modal fade" id="enquiryModal-propertymanagement" tabindex="-1" aria-labelledby="enquiryModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="enquiryModalLabel">Property Management </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your valid email address.
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="country" class="form-label mb-3">Select your country: *</label>
+                                <select class="form-select" id="country" name="country" required>
+                                    <option value="">--Select your country--</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="China">China</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label mb-3">How Can We Assist You? *</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"
+                                placeholder="Enter your message or specific requirements" required></textarea>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                <button type="submit" id="submit-button" class="search-button btn btn-primary">
+                                    Submit</button>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                <span class="loading spinner-border mt-3 "></span>
+                                <!-- Success Message (Hidden by Default) -->
+                                <div class="mt-3 success-message text-success" style="display:none;  color: green;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enquiryModal-nurseservices" tabindex="-1" aria-labelledby="enquiryModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="enquiryModalLabel">Nurse Services</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your valid email address.
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="country" class="form-label mb-3">Select your country: *</label>
+                                <select class="form-select" id="country" name="country" required>
+                                    <option value="">--Select your country--</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="China">China</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label mb-3">How Can We Assist You? *</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"
+                                placeholder="Enter your message or specific requirements" required></textarea>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                <button type="submit" id="submit-button" class="search-button btn btn-primary">
+                                    Submit</button>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                <span class="loading spinner-border mt-3 "></span>
+                                <!-- Success Message (Hidden by Default) -->
+                                <div class="mt-3 success-message text-success" style="display:none;  color: green;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="enquiryModal-elderycare" tabindex="-1" aria-labelledby="enquiryModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="enquiryModalLabel">Elderly Care</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your valid email address.
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="country" class="form-label mb-3">Select your country: *</label>
+                                <select class="form-select" id="country" name="country" required>
+                                    <option value="">--Select your country--</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="China">China</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label mb-3">How Can We Assist You? *</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"
+                                placeholder="Enter your message or specific requirements" required></textarea>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                <button type="submit" id="submit-button" class="search-button btn btn-primary">
+                                    Submit</button>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                <span class="loading spinner-border mt-3 "></span>
+                                <!-- Success Message (Hidden by Default) -->
+                                <div class="mt-3 success-message text-success" style="display:none;  color: green;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="enquiryModal-housekeeping" tabindex="-1" aria-labelledby="enquiryModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="enquiryModalLabel">House Keeping Services </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your valid email address.
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="country" class="form-label mb-3">Select your country: *</label>
+                                <select class="form-select" id="country" name="country" required>
+                                    <option value="">--Select your country--</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="China">China</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label mb-3">How Can We Assist You? *</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"
+                                placeholder="Enter your message or specific requirements" required></textarea>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                <button type="submit" id="submit-button" class="search-button btn btn-primary">
+                                    Submit</button>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                <span class="loading spinner-border mt-3 "></span>
+                                <!-- Success Message (Hidden by Default) -->
+                                <div class="mt-3 success-message text-success" style="display:none;  color: green;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="enquiryModal-visa" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="enquiryModalLabel">Visa & Immigration Services</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your valid email address.
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="country" class="form-label mb-3">Select your country: *</label>
+                                <select class="form-select" id="country" name="country" required>
+                                    <option value="">--Select your country--</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="China">China</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label mb-3">How Can We Assist You? *</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"
+                                placeholder="Enter your message or specific requirements" required></textarea>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                <button type="submit" id="submit-button" class="search-button btn btn-primary">
+                                    Submit</button>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                <span class="loading spinner-border mt-3 "></span>
+                                <!-- Success Message (Hidden by Default) -->
+                                <div class="mt-3 success-message text-success" style="display:none;  color: green;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="enquiryModal-event" tabindex="-1" aria-labelledby="enquiryModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="enquiryModalLabel">Event Management</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your valid email address.
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="country" class="form-label mb-3">Select your country: *</label>
+                                <select class="form-select" id="country" name="country" required>
+                                    <option value="">--Select your country--</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="China">China</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label mb-3">How Can We Assist You? *</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"
+                                placeholder="Enter your message or specific requirements" required></textarea>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                <button type="submit" id="submit-button" class="search-button btn btn-primary">
+                                    Submit</button>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                <span class="loading spinner-border mt-3 "></span>
+                                <!-- Success Message (Hidden by Default) -->
+                                <div class="mt-3 success-message text-success" style="display:none;  color: green;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enquiryModal-govdoc" tabindex="-1" aria-labelledby="enquiryModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="enquiryModalLabel">Goverment Documents</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter your valid email address.
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                <div class="invalid-feedback">
+                                    Please enter your phone number.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                                <label for="country" class="form-label mb-3">Select your country: *</label>
+                                <select class="form-select" id="country" name="country" required>
+                                    <option value="">--Select your country--</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="China">China</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="India">India</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label mb-3">How Can We Assist You? *</label>
+                            <textarea class="form-control" id="message" rows="3" name="message"
+                                placeholder="Enter your message or specific requirements" required></textarea>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                                <button type="submit" id="submit-button" class="search-button btn btn-primary">
+                                    Submit</button>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+                                <span class="loading spinner-border mt-3 "></span>
+                                <!-- Success Message (Hidden by Default) -->
+                                <div class="mt-3 success-message text-success" style="display:none;  color: green;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Enquiry Modal -->
     <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -167,10 +910,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="enquiryModalLabel">Travel Companion Enquiry Form</h3>
+                    <h3 class="modal-title" id="enquiryModalLabel">Travel Companion</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body container">
+                    <h5>Please enter your basic details</h5>
+
+
                     <form method="POST" class="needs-validation" novalidate>
                         <div class="row">
                             <div class="col-lg-6">
@@ -366,6 +1112,8 @@
                         Immigration Services</button>
                     <button class="filter-button search-button-filler" data-filter="travel-companion">Travel
                         Companion</button>
+                    <button class="filter-button search-button-filler" data-filter="event-management">Event
+                        Management</button>
                 </div>
             </div>
         </div>
@@ -391,7 +1139,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
                             <button class="search-button" data-bs-toggle="modal"
-                                data-bs-target="#enquiryModal">Enquiry</button>
+                                data-bs-target="#enquiryModal-propertymanagement">Enquiry</button>
                         </div>
 
                     </div>
@@ -425,7 +1173,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
                             <button class="search-button" data-bs-toggle="modal"
-                                data-bs-target="#enquiryModal">Enquiry</button>
+                                data-bs-target="#enquiryModal-nurseservices">Enquiry</button>
                         </div>
                     </div>
 
@@ -438,7 +1186,7 @@
             <div class="row mb-10 elderly-care">
 
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
-                    <h2>Eldery Care</h2>
+                    <h2>Elderly Care</h2>
                     <p>When living abroad, NRIs often seek safe, comfortable, and compassionate living arrangements for
                         their aging parents in Tamil Nadu, India. Our elderly care services
                         provide a nurturing environment with care, ensuring the well-being of elderly
@@ -457,7 +1205,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
                             <button class="search-button" data-bs-toggle="modal"
-                                data-bs-target="#enquiryModal">Enquiry</button>
+                                data-bs-target="#enquiryModal-elderycare">Enquiry</button>
                         </div>
                     </div>
 
@@ -490,7 +1238,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
                             <button class="search-button" data-bs-toggle="modal"
-                                data-bs-target="#enquiryModal">Enquiry</button>
+                                data-bs-target="#enquiryModal-housekeeping">Enquiry</button>
                         </div>
                     </div>
                 </div>
@@ -522,7 +1270,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
                             <button class="search-button" data-bs-toggle="modal"
-                                data-bs-target="#enquiryModal">Enquiry</button>
+                                data-bs-target="#enquiryModal-govdoc">Enquiry</button>
                         </div>
                     </div>
 
@@ -552,7 +1300,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
                             <button class="search-button" data-bs-toggle="modal"
-                                data-bs-target="#enquiryModal">Enquiry</button>
+                                data-bs-target="#enquiryModal-visa">Enquiry</button>
                         </div>
                     </div>
                 </div>
@@ -589,6 +1337,36 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
                     <img src="assests/img/travel-2.png"></img>
+                </div>
+            </div>
+            <div class="row mb-10 event-management">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 prmgt-rc">
+                    <h2>Event Management for NRIs</h2>
+                    <p>Planning a memorable event in India while residing abroad can be overwhelming. At NRI Service
+                        Desk,
+                        we specialize in providing end-to-end event management services tailored specifically for
+                        Non-Resident Indians. Whether it’s a family celebration, religious ceremony,
+                        or a corporate gathering, our local expertise ensures a seamless experience from start to
+                        finish.</p>
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-xs-12 col-sm-12">
+                            <ul>
+                                <li>Weddings & Receptions</li>
+                                <li>Religious Ceremonies</li>
+                                <li>Family Functions</li>
+                                <li>Corporate Events</li>
+                                <li>Virtual/Hybrid Events</li>
+
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12 text-center-css">
+                            <button class="search-button" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal-event">Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 vs-lt">
+                    <img src="assests/img/event-management.png"></img>
                 </div>
             </div>
             <div class="main-ly-abt testimonial-sec pb-40">
@@ -663,7 +1441,7 @@
 </div>-->
         <div class="container footer-sec">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 
                     <h4>Call Our Team</h4>
                     <div class="row">
@@ -671,15 +1449,15 @@
                             <h5>Ezhil</h5>
                         </div>
                         <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                            <h5><a href="tel:+916374024055">+91 63740 24055</a> (Tamil - Engilsh) <label>3.30AM - 4:30AM
-                                    EST | 7.30AM - 10:00AM EST</label></h5>
+                            <h5><a href="tel:+916374024055">+91 63740 24055</a> (Tamil - Engilsh) <label>3.30AM -
+                                    4:30AM EST | 7.30AM - 10:00AM EST</label></h5>
                         </div>
                         <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
                             <h5>Kiruthi</h5>
                         </div>
                         <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                            <h5><a href="tel:+917867075706">+91 78670 75706</a> (Tamil - Engilsh) <label>4:30AM - 7.30AM
-                                    EST </label></h5>
+                            <h5><a href="tel:+917867075706">+91 78670 75706</a> (Tamil - Engilsh) <label>4:30AM -
+                                    7.30AM EST </label></h5>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
@@ -693,8 +1471,8 @@
                             <h5>Kalaikovan</h5>
                         </div>
                         <div class="col-lg-9 col-md-9 col-xs-6 col-sm-6">
-                            <h5><a href="tel:+919047646298">+91 90476 46298</a> (Tamil - Engilsh - Hindi)<label> 5:30PM
-                                    - 12:30AM EST</label></h5>
+                            <h5><a href="tel:+919047646298">+91 90476 46298</a> (Tamil - Engilsh - Hindi)<label>
+                                    5:30PM - 12:30AM EST</label></h5>
 
                         </div>
 
@@ -702,45 +1480,25 @@
                     </div>
 
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <h4>Email</h4>
-                    <h5><a href="mailto:help@nriservicedesk.com">help@nriservicedesk.com</a></h5>
-                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Property Management</a></li>
-                        <li><a href="services.html">Nurse Services</a></li>
-                        <li><a href="services.html">Elderly Care</a></li>
-                        <li><a href="services.html">House Keeping</a></li>
-                        <li><a href="services.html">Goverment Documents</a></li>
-                        <li><a href="services.html">Visa & Immigration Services</a></li>
-                        <li><a href="services.html">Travel Companion</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="howitworks.html">How it works</a></li>
-                        <!-- <li><a href="">Blogs</a></li>  -->
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
 
             </div>
         </div>
-        <div class="container cr-sec">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-al-lt">
-                    <p>© 2024 NRI Service Desk, Incorporated All Rights Reserved</p>
-                </div>
-
-            </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <h4>Email</h4>
+            <h5><a href="mailto:help@nriservicedesk.com">help@nriservicedesk.com</a></h5>
+            <h5><a href="mailto:kalai.m@nriservicedesk.com">kalai.m@nriservicedesk.com</a></h5>
         </div>
+    </div>
+    </div>
+    <div class="container cr-sec">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-al-lt">
+                <p>© 2024 NRI Service Desk, Incorporated All Rights Reserved</p>
+            </div>
+
+        </div>
+    </div>
 
     </div>
 

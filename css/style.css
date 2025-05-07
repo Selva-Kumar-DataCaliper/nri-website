@@ -30,6 +30,16 @@ a:hover{
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+.modal-body h5{
+    padding-bottom: 20px;
+    color: #F47820;
+}
+.ml-1 {
+    margin-left: 10px !important;
+}
+.mr-1 {
+margin-right: 10px !important;
+}
 .logo {
     width:320px;
     padding-top: 25px !important;
@@ -724,13 +734,13 @@ textarea {
     margin: 0 auto;
   }
   .search-button-filler{
-    padding: 10px 20px;
+    padding: 10px 30px;
     border: none;
     cursor: pointer;
     color: white;
     background-color:#7FA738;
     transition: background 0.3s;
-    margin-right: 4px;
+    margin-right: 25px;
     border-radius: 10px;
     font-family: 'Inter Tight';
     letter-spacing: .02cm;
@@ -739,6 +749,7 @@ textarea {
   .filter.show {
     display: block;
 }
+
   .search-button {
     padding: 12px 50px;
     border: none;
