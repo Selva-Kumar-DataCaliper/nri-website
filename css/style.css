@@ -12,6 +12,18 @@ a{
 p{
     line-height: 28px;
 }
+.top-bar {
+    background-image: linear-gradient(to right, #7FA738, #F47820);
+    text-align: right;
+     padding-top: 5px;
+    padding-bottom: 5px;
+}
+.top-bar a{
+    color: #fff;
+}
+.top-bar a:hover{
+    color: #fff;
+}
 .navbar-expand-sm .navbar-nav .nav-link{
     padding-left: 0;
     padding-right: 0;
@@ -417,6 +429,10 @@ textarea {
     padding-top: 12px;
     opacity: .9;
 }
+.footer-sec i{
+    color: #075E54;
+}
+
 .form-control {
     font-size: 18px;
     font-weight: 600;
@@ -1012,7 +1028,6 @@ textarea {
 
     .top-box-logi-con {
         background-color: #FBF1EC;
-        width: 24%;
         margin: auto;
         border-radius: 25px;
         padding: 30px;
@@ -1045,9 +1060,12 @@ textarea {
     font-size: 16px;
 }
 .top-box-logi-con i{
-    color: #7FA738;
-    font-size: 50px;
+    color: #075E54;
+    font-size: 24px;
     padding-bottom: 10px;
+}
+.pad-h4-top h4{
+    padding-top: 22px;
 }
 .top-box-logi-con a{
     text-decoration: none;
@@ -1216,6 +1234,13 @@ color: #ffffff !important;
     p, li, a, span, label {
         font-size: calc(100% - 5px);
     } */
+     .top-bar {
+    text-align: left;
+ 
+}
+.top-bar a{
+    font-size: 13px;
+}
     .menu-item li {
         font-size: 16px;
         padding: 10px 0;
